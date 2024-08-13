@@ -1,4 +1,4 @@
-<nav class="bg-blue w-full flex   justify-around  ">
+<nav class="bg-blue w-full flex justify-around  ">
     <div class="w-full max-w-screen-2xl  flex justify-between ">
 
         <div class="flex m-2 ">
@@ -13,10 +13,22 @@
         </div>
 
 
-        <div class="flex items-center">
-            <x-nav-link href="/Dashboard">Dashboard</x-nav-link>
-            <x-nav-link href="/register">Register</x-nav-link>
-            <x-nav-link href="/login">Login</x-nav-link>
+        <div class=" items-center hidden lg:flex">
+            <x-nav-link href="{{ route('home') }}">
+                Home
+            </x-nav-link>
+            <x-nav-link href="{{ route('student.dashboard') }}">
+                Dashboard
+            </x-nav-link><x-nav-link href="{{ route('register') }}">
+                Register
+            </x-nav-link>
+            <x-nav-link href="{{ route('login') }}">
+                Login
+            </x-nav-link>
+
+
+
+
         </div>
 
 

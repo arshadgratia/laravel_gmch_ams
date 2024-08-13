@@ -8,8 +8,12 @@ export default {
     theme: {
         colors: {
             "blue":'#222831',
+            "light-blue":'#357579',
             "white":'#EEEEEE',
-            "cyan":'#76ABAE'
+            "cyan":'#76ABAE',
+            "red":'#f43063',
+            "gray":'#31363F',
+            "cyan-dark":'#4ca7ad',
         },
         extend: {
             fontFamily: {
