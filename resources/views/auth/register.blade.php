@@ -3,7 +3,7 @@
         <form method="POST" action="{{route('register')}}">
             @csrf
             <x-dropdown-select id="countries" name="role"  for="role">
-                <option selected>Choose a Role</option>
+                <option selected value="student">Choose a Role</option>
                 <option value="professor">Professor</option>
                 <option value="student">Student</option>
 
@@ -15,28 +15,43 @@
                 type="name"
                 id="name"
                 placeholder="John Doe"
+
             >
                 Name
             </x-form-input>
+            <x-form-error name="name"></x-form-error>
             <x-form-input
                 name="email"
                 type="email"
                 id="email"
                 placeholder="johndoe@example.com"
+
             >
                 Email
             </x-form-input>
-
+            <x-form-error name="email"></x-form-error>
             <x-form-input
                  name="password"
                 type="password"
                 id="password"
-                placeholder="password"
+                placeholder="Password"
 
             >
-                password
+                Password
 
             </x-form-input>
+            <x-form-error name="password"></x-form-error>
+            <x-form-input
+                name="password_confirmation"
+                type="password"
+                id="password_confirmation"
+                placeholder="Password"
+
+            >
+                Confirm Password
+
+            </x-form-input>
+            <x-form-error name="password_confirmation"></x-form-error>
             <div class="flex justify-around mt-4">
                 <x-button
                     type="submit"

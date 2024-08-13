@@ -15,9 +15,13 @@
                 type="email"
                 id="email"
                 placeholder="johndoe@example.com"
+
             >
                 Email
             </x-form-input>
+            <x-form-error name="email">
+                email
+            </x-form-error>
 
             <x-form-input
                 name="password"
@@ -25,10 +29,14 @@
                 id="password"
                 placeholder="password"
 
+
             >
                 password
 
             </x-form-input>
+            <x-form-error name="password">
+                email
+            </x-form-error>
             <div class="flex justify-around m-4">
                 <x-button
                     type="submit"
