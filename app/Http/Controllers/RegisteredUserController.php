@@ -35,6 +35,7 @@ class RegisteredUserController extends Controller
         ]);
 
 
+
         //create
         $user = User::create($attributes);
         //login

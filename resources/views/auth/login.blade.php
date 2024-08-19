@@ -38,8 +38,8 @@
                 email
             </x-form-error>
             <div class="flex justify-around m-4">
-                <x-button
-                    type="submit"
+                <x-button class="bg-cyan-dark text-white px-6 p-3 rounded-md"
+                          type="submit"
 
                 >
                     Login

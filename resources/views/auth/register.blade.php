@@ -2,7 +2,7 @@
     <div class="w-full max-w-md m-auto h-full  flex flex-col    justify-center ">
         <form method="POST" action="{{route('register')}}">
             @csrf
-            <x-dropdown-select id="countries" name="role"  for="role">
+            <x-dropdown-select id="role" name="role"  for="role">
                 <option selected value="student">Choose a Role</option>
                 <option value="professor">Professor</option>
                 <option value="student">Student</option>
@@ -54,7 +54,7 @@
             <x-form-error name="password_confirmation"></x-form-error>
             <div class="flex justify-around mt-4">
                 <x-button
-                    type="submit"
+                    type="submit" class="bg-cyan-dark text-white px-6 p-3 rounded-md"
 
                 >
                     Register

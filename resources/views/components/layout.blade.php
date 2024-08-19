@@ -9,7 +9,7 @@
           rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
-<body class="flex flex-col items-center     min-h-screen">
+<body class="flex flex-col items-center   bg-white  min-h-screen">
 <x-nav-bar></x-nav-bar>
 {{$slot}}
 </body>
