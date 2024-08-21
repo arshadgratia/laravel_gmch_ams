@@ -15,7 +15,9 @@ export default {
             "red":'#f43063',
             "gray":'#31363F',
             "cyan-dark":'#4ca7ad',
-            "block":'#505050'
+            "block":'#505050',
+            "light-gray":'#c2c2c2',
+
         },
         extend: {
             fontFamily: {

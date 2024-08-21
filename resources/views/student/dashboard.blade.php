@@ -2,7 +2,7 @@
     <div class=" flex items-center max-w-screen-2xl   justify-between w-full py-2 mx-2">
         <h1 class="text-xl flex font-semibold text-blue ml-2"> <x-fas-filter class="w-4 mr-2 text-lighter-blue" />Filters</h1>
         <div >
-            <form method="GET" action="/">
+            <form method="GET" action="/add">
                 <x-button type="submit" class=" text-white px-4 py-2 bg-cyan-dark rounded-3xl">Add</x-button>
             </form>
         </div>
@@ -54,7 +54,7 @@
 
                 @foreach($activities as $activity)
 
-                    <x-activity-card user="{{Auth::user()->name}}" name="{{$activity->type}}" date="{{ $activity->created_at->format('jS, F, Y') }}" >{{$activity->description}}</x-activity-card>
+                    <x-activity-card user="{{$activity->user->name}}" name="{{$activity->type}}" date="{{ $activity->created_at->format('jS, F, Y') }}" >{{$activity->description}}</x-activity-card>
 
                 @endforeach
 
