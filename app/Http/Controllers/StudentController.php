@@ -10,11 +10,11 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
-    public function dashboard( Request $request): View|Factory|Application
+    public function dashboard(Request $request): View|Factory|Application
     {
 
         $query = Activity::with('user')->where('user_id', Auth::user()->id)->latest();
@@ -37,12 +37,7 @@ class StudentController extends Controller
         $activities = $query->simplePaginate(12);
 
 
-
-
-
-
-
-        return view('student.dashboard',compact('activities'));
+        return view('student.dashboard', compact('activities'));
 
 
         //
@@ -54,20 +49,64 @@ class StudentController extends Controller
 
     }
 
-    public function create( Request $request): Application|Redirector|RedirectResponse
+    public function create(Request $request): Application|Redirector|RedirectResponse
 
     {
 //       dd($request->all());
-        $validRoles = ['act1','act2','act3','act4','act5','act6','act7','act8'];
+
+        $validType = [
+            'lecture',
+            'seminar',
+            'group_discussion',
+            'presentation',
+            'research_work',
+            'grand_round',
+            'graded_responsibility',
+            'elog_book'
+        ];
+
+// Validate incoming request data
         $validatedData = $request->validate([
             'description' => 'required',
-            'type' =>[ 'required',Rule::in($validRoles)],
-            "user_id" => 'required',
+            'type' => ['required', 'in:' . implode(',', $validType)],
+            'user_id' => 'required|exists:users,id', // Ensure user_id exists in the users table
+            'attachment' => 'nullable|file|mimes:jpg,png,pdf|max:2048',
         ]);
-        Activity::create($validatedData);
 
-        return redirect(route('student.dashboard'));
+// Handle file attachment if present
+        $attachmentPath = null;
+        if ($request->hasFile('attachment')) {
+            $attachmentPath = $request->file('attachment')->store('attachments', 'public');
+        }
+
+// Create a new activity record
+        Activity::create([
+            'type' => $validatedData['type'],
+            'description' => $validatedData['description'],
+            'user_id' => $validatedData['user_id'],
+            'attachment_path' => $attachmentPath,
+        ]);
 
 
+// Redirect to the student dashboard route
+        return redirect()->route('student.dashboard');
+
+
+    }
+    public function attachmentDownload($id)
+    {
+        // Find the activity by ID
+        $activity = Activity::findOrFail($id);
+
+        // Get the attachment path
+        $attachmentPath = $activity->attachment_path;
+
+        // Ensure the file exists
+        if (!$attachmentPath || !Storage::disk('public')->exists($attachmentPath)) {
+            abort(404, 'File not found');
+        }
+
+        // Return the file as a download response
+        return Storage::disk('public')->download($attachmentPath);
     }
 }

@@ -11,6 +11,7 @@ export default {
             "lighter-blue":'#2d3544',
             "light-blue":'#357579',
             "white":'#EEEEEE',
+            "full-white":'#ffffff',
             "cyan":'#76ABAE',
             "red":'#f43063',
             "gray":'#31363F',

@@ -17,6 +17,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('type');
                 $table->text('description');
+                $table->string('attachment_path')->nullable();
                 $table->foreignIdFor(User::class);
                 $table->timestamps();
 

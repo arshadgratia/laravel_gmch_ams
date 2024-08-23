@@ -26,6 +26,9 @@ Route::middleware('student')->group(function () {
 
 
 });
+// In routes/web.php
+Route::get('activities/{id}/download', [StudentController::class, 'attachmentDownload'])->name('activities.download');
+
 
 
 Route::middleware(ProfessorMiddleware::class)->group(function () {

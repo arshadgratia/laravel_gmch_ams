@@ -40,7 +40,7 @@ class ProfessorController extends Controller
 // Paginate the results
         $activities = $query->simplePaginate(12);
 
-        return view('student.dashboard',compact('activities'));
+        return view('professor.student-dashboard',compact('activities'));
 
 
 

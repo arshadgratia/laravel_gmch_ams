@@ -38,6 +38,7 @@ class Activity extends Model
     use HasFactory;
     protected $guarded = [];
 
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
@@ -46,6 +47,14 @@ class Activity extends Model
     public function getFormattedCreatedAtAttribute(): string
     {
         return $this->created_at->format('jS F, Y');
+    }
+    public function getFormattedTypeAttribute(): string
+    {
+        return ucwords(str_replace('_', ' ', $this->type));
+    }
+    public function getAttachmentUrlAttribute()
+    {
+        return $this->attachment_path ? asset('storage/' . $this->attachment_path) : null;
     }
 
 }

@@ -35,7 +35,8 @@ class SessionController extends Controller
 
        }
        request()->session()->regenerate();
-       return redirect(route('student.dashboard'));
+
+       return redirect(route('home'));
 
     }
 
