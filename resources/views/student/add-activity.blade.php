@@ -2,7 +2,7 @@
     title="Add Activity"
 >
     <div class="w-full max-w-md m-auto h-full  flex flex-col    justify-center ">
-        <form method="POST" action="{{route('student.add-activity')}}" enctype='multipart/form-data'>
+        <form method="POST" action="{{route('post.student.add-activity')}}" enctype='multipart/form-data'>
 
 
             @csrf

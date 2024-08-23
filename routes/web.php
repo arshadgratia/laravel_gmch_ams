@@ -22,7 +22,7 @@ Route::post('/register', [RegisteredUserController::class, 'store'])->name('post
 Route::middleware('student')->group(function () {
     Route::get('/dashboard', [StudentController::class, 'dashboard'])->name('student.dashboard');
     Route::get('/add', [StudentController::class, 'show'])->name('student.add-activity');
-    Route::post('/add', [StudentController::class, 'create'])->name('student.add-activity');
+    Route::post('/add', [StudentController::class, 'create'])->name('post.student.add-activity');
 
 
 });
