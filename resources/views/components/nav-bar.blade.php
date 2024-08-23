@@ -44,6 +44,7 @@
                             Students
 
                         </x-nav-link>
+                        <x-nav-link href="{{route('professor.all.activities')}}">Activities</x-nav-link>
                     @endif
                 <form method="POST" action="{{route('logout')}}">
                     @csrf

@@ -34,6 +34,8 @@ Route::get('activities/{id}/download', [StudentController::class, 'attachmentDow
 Route::middleware(ProfessorMiddleware::class)->group(function () {
     Route::get('/professor/students', [ProfessorController::class, 'index'])->name('professor.students');
     Route::get('/professor/students/{id}',[ProfessorController::class, 'show'])->name('professor.students.show');
+    Route::get('/professor/activities/',[ProfessorController::class, 'showActivities'])->name('professor.all.activities');
+
 
 
 });

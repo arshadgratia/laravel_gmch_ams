@@ -32,7 +32,24 @@ class StudentController extends Controller
                     ->orWhere('description', 'like', "%{$search}%");
             });
         }
-
+// Apply the 'date' filter if it's provided
+        if ($date = $request->input('date')) {
+            // Check the length of the date string to determine the format
+            $query->where(function ($query) use ($date) {
+                if (strlen($date) === 4) {
+                    // Year only
+                    $query->whereYear('created_at', $date);
+                } elseif (strlen($date) === 7) {
+                    // Year and month
+                    [$year, $month] = explode('-', $date);
+                    $query->whereYear('created_at', $year)
+                        ->whereMonth('created_at', $month);
+                } elseif (strlen($date) === 10) {
+                    // Year, month, and day
+                    $query->whereDate('created_at', $date);
+                }
+            });
+        }
 // Paginate the results
         $activities = $query->simplePaginate(12);
 
