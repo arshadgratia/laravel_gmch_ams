@@ -2,6 +2,8 @@
     <div class="bg-blue-950 w-full max-w-screen-2xl p-4">
 
         <!-- Home Page -->
+        <h1 class="text-4xl font-bold text-red">Please open the site in a desktop for the time being, to be able to use filters </h1>
+
         <h1 class="text-4xl font-bold text-light-blue">Please read through this introduction to this site before registering to this prototype</h1>
         <section id="home" class="p-8 ">
             <h1 class="text-4xl font-bold mb-4 text-light-blue">Home Page</h1>

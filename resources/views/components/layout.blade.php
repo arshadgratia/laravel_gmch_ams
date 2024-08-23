@@ -13,4 +13,10 @@
 <x-nav-bar></x-nav-bar>
 {{$slot}}
 </body>
+<script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        var menuLinks = document.getElementById('menu-links');
+        menuLinks.classList.toggle('hidden');
+    });
+</script>
 </html>
