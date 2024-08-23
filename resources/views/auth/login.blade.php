@@ -1,6 +1,6 @@
 <x-layout title="Login">
     <div class="w-full max-w-md m-auto h-full  flex flex-col    justify-center ">
-        <form method="POST" action="{{route('login')}}">
+        <form method="POST" action="{{route('postLogin')}}">
             @csrf
             {{--            <div class="m-2">--}}
             {{--                <label for="email" class="block font-medium text-cyan-dark"> Email </label>--}}

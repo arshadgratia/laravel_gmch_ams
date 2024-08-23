@@ -1,6 +1,6 @@
 <x-layout title="Register">
     <div class="w-full max-w-md m-auto h-full  flex flex-col    justify-center ">
-        <form method="POST" action="{{route('register')}}">
+        <form method="POST" action="{{route('potRegister')}}">
             @csrf
             <x-dropdown-select id="role" name="role"  for="role">
                 <option selected value="student">Choose a Role</option>

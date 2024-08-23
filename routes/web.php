@@ -12,11 +12,11 @@ Route::get('/', function () {
 })->name('home');
 Route::middleware('guest')->group(function () {
     Route::get('/login', [SessionController::class, 'create'])->name('login');
-    Route::post('/login', [SessionController::class, 'store'])->name('login');
+    Route::post('/login', [SessionController::class, 'store'])->name('postLogin');
 });
 Route::post('/logout', [SessionController::class, 'destroy'])->name('logout')->middleware('auth');
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
-Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
+Route::post('/register', [RegisteredUserController::class, 'store'])->name('postRegister');
 
 
 Route::middleware('student')->group(function () {
