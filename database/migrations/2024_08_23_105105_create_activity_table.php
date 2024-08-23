@@ -13,14 +13,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('activity', function (Blueprint $table) {
-            Schema::create('activities', function (Blueprint $table) {
-                $table->id();
-                $table->string('type');
-                $table->text('description');
-                $table->foreignIdFor(User::class);
-                $table->timestamps();
-
-            });
+            $table->id();
+            $table->string('type');
+            $table->text('description');
+            $table->string('attachment_path')->nullable();
+            $table->foreignIdFor(User::class);
+            $table->timestamps();
         });
     }
 
