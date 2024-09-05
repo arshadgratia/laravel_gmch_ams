@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class StudentController extends Controller
 {
@@ -23,6 +24,7 @@ class StudentController extends Controller
 // Apply the 'type' filter if it's provided
         if ($type = $request->input('type')) {
             $query->where('type', $type);
+
         }
 
 // Apply the 'search' filter if it's provided
@@ -110,7 +112,7 @@ class StudentController extends Controller
 
 
     }
-    public function attachmentDownload($id)
+    public function attachmentDownload($id): StreamedResponse
     {
         // Find the activity by ID
         $activity = Activity::findOrFail($id);

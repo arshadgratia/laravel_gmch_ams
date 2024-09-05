@@ -32,12 +32,12 @@
                         <option value="" {{ old('type') == '' ? 'selected' : '' }}>Choose an activity</option>
                         <option value="Lecture" {{ old('type') == 'Lecture' ? 'selected' : '' }}>Lecture</option>
                         <option value="Seminar" {{ old('type') == 'Seminar' ? 'selected' : '' }}>Seminar</option>
-                        <option value="Group Discussion" {{ old('type') == 'Group Discussion' ? 'selected' : '' }}>Group Discussion</option>
+                        <option value="Group_Discussion" {{ old('type') == 'Group Discussion' ? 'selected' : '' }}>Group Discussion</option>
                         <option value="Presentation" {{ old('type') == 'Presentation' ? 'selected' : '' }}>Presentation</option>
-                        <option value="Research Work" {{ old('type') == 'Research Work' ? 'selected' : '' }}>Research Work</option>
-                        <option value="Grand Round" {{ old('type') == 'Grand Round' ? 'selected' : '' }}>Grand Round</option>
-                        <option value="Graded Responsibility" {{ old('type') == 'Graded Responsibility' ? 'selected' : '' }}>Graded Responsibility</option>
-                        <option value="E-Log book" {{ old('type') == 'E-Log book' ? 'selected' : '' }}>E-log book</option>
+                        <option value="Research_Work" {{ old('type') == 'Research Work' ? 'selected' : '' }}>Research Work</option>
+                        <option value="Grand_Round" {{ old('type') == 'Grand Round' ? 'selected' : '' }}>Grand Round</option>
+                        <option value="Graded_Responsibility" {{ old('type') == 'Graded Responsibility' ? 'selected' : '' }}>Graded Responsibility</option>
+                        <option value="ELog_book" {{ old('type') == 'E-Log book' ? 'selected' : '' }}>E-log book</option>
                     </select>
                 </div>
 

@@ -17,7 +17,16 @@ class ActivityFactory extends Factory
      */
     public function definition(): array
     {
-        $array = ['act1', 'act2', 'act3', 'act4', 'act5', 'act6', 'act7', 'act8'];
+        $array = [
+            'lecture',
+            'seminar',
+            'group_discussion',
+            'presentation',
+            'research_work',
+            'grand_round',
+            'graded_responsibility',
+            'elog_book'
+        ];
         return [
 
             'type' => $this->faker->randomElement($array),
@@ -29,7 +38,8 @@ class ActivityFactory extends Factory
     public function usered(): static
     {
         return $this->state(fn(array $attributes) => [
-            'user_id' => '4',
+            'user_id' => '1',
+            'attachment_path'=>'attachments/VBXBiUfn2KLLirdfoB9C4C0cS9nh9QwRJVwqcRwS.png'
         ]);
     }
 }

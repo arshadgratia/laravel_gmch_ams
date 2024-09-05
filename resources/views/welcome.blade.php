@@ -5,13 +5,13 @@
                 Notifications
             </h1>
         </div>
-        <div>
-            <p>
+        <div class="p-4 rounded border border-cyan-dark mt-2 ">
+            <p class="text-blue font-semibold">
                 loremdafdfa adfa adf ad  gfad  ad fad h ad f sga  adg a
             </p>
             <div class="flex justify-between ">
-                <h1 class="font-semibold text-lighter-blue">13th july, 2024</h1>
-                <h1 class="font-semibold text-lighter-blue">John Doe</h1>
+                <h1 class="font-semibold text-light-blue">13th july, 2024</h1>
+                <h1 class="font-semibold text-light-blue">John Doe</h1>
             </div>
         </div>
     </div>
